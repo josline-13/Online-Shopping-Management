@@ -1,0 +1,36 @@
+
+body{
+
+font-family: Arial, Helvetica, sans-serif;
+}
+* {box-sizing: border-box;}
+body {
+    background-image: url("grp.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+	ul {
+    list-style-type: none;
+    margin: 15;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0.7;
+    background-color: #333;
+}
+
+li {
+    float left: centre;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 30px 16px;
+
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}

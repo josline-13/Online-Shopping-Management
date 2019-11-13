@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SHOPPING CART</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="cart.css"
+</head>
+<body>
+	<div class="container">
+<?php
+$connect=mysqli_connect('localhost','root,'')
+	$query ='select *from products order by id asc';
+	$result = mysqli_query($connect,$query);
+	if($result):
+	{
+		if(myysqli_num_rows($result)>0):
+			while($product=mysqli_fetch_assoc($result)){
+				?>
+                  <div class="col-sm-4 col-md-3">
+                  <form method="post" action="index.php?action=add&id=<?php echo $product['id]; ?>"> 
+                  <div class="products">
+                  <img src="<?php echo $product['image']; ?>" class="img.responsive"/>
+                  <h4 class="text-info"><?php echo $product['name']; ?></h4>
+                  <h4> $ <?php echo $product['price']; ?></h4>
+                  <input type="text" name="quantity" class="form-control" value="1"/>
+                  <input type="hidden" name="name" value="<?php echo $product['name']; ?>"/>
+                  <input type="hidden" name="name" value="<?php echo $product['price']; ?>"/>
+                  <input type="submit" name="add_to_cart" class="btn btn-info"
+                  value="Add to Cart" />
+
+                  </div>
+                  </form>
+                  </div>
+				<?php
+			endwhile;
+
+		endif;
+	enfif;
+	?>
+	</div>
+</body>
+</html>
